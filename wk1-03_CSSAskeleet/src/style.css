@@ -1,0 +1,19 @@
+body {
+    background-color: rgb(242, 242, 242);
+    font-family: 'Trebuchet MS', Trebuchet, Arial, sans-serif;
+}
+
+h2 {
+    color: rgb(252,179,2);
+}
+
+article {
+    background-color: rgb(255, 255, 255);
+
+    padding: 1em;
+    width: 40%;
+
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+}

@@ -1,0 +1,38 @@
+body {
+    background-color: rgb(242, 242, 242);
+    font-family: 'Trebuchet MS', Trebuchet, Arial, sans-serif;
+}
+
+h2 {
+    background-color: rgb(255, 255, 255);    
+}
+
+h2 a{
+    font-size: 1.5em;
+    color: rgb(252,179,2);
+    text-decoration: none;    
+}
+
+article {
+    background-color: rgb(255, 255, 255);
+
+    margin: 1em;
+    padding: 1em;
+    width: 40%;
+
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+}
+
+turha {
+    color: rgb(242, 242, 242);
+    color: rgb(155, 155, 155);
+    color: rgb(10, 10, 10);
+    color: rgb(252,179,21);
+}
+
+/* kun article-elementin päälle viedään hiiri, kallistetaan */
+article:hover {
+    transform: rotate(-2deg);
+}

@@ -1,0 +1,63 @@
+body {
+    background-color: rgb(233, 229, 217);
+    font-family: 'Trebuchet MS', Trebuchet, Arial, sans-serif;    
+}
+
+body header h1 {
+    color: rgb(73, 69, 69);   
+}
+
+header nav ul {
+    font-size: 1.3em;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 auto 2em auto;
+    
+    background-color: rgb(73, 69, 69);
+    list-style-type: none;
+    border-radius: 10px;
+    padding: 1em;    
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    color: rgb(233, 229, 217);
+    display: inline-block;
+    padding: 4px 1.5em;
+    text-decoration: none;
+}
+
+header nav ul li a:hover {
+    background-color: rgb(233, 229, 217);
+    color: rgb(73, 69, 69);
+}
+
+body section h1 {
+    color: rgb(66, 126, 120);
+}
+
+section {
+    background-color: rgb(255, 255, 255);
+
+    padding: 1em;
+    width: 40%;
+
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+}
+
+section.hidden {
+    display: none;
+}
+
+turha {
+    color: rgb(233, 229, 217);
+    color: rgb(73, 69, 69);
+    color: rgb(66, 126, 120);
+}
+
+

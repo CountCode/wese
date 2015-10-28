@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Yleiskone</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css">           
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body onload="init();">
+
+
+        <header>
+            <h1>Yleiskone</h1>
+
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="displaySection(0);return false;">Celsius-Fahrenheit -muunnin</a></li>
+                    <li><a href="#" onclick="displaySection(1);return false;">Jalka-metri -muunnin</a></li>
+                    <li><a href="#" onclick="displaySection(2);return false;">Julkaisulaskuri</a></li>
+
+                </ul>
+            </nav>
+        </header>
+
+        <section>
+            <header>
+                <h1>Celsius-Fahrenheit muunnin</h1>
+            </header>
+
+            <article>
+                <p>Celsius-asteista Fahrenheitiksi ja takaisin. Sivuston tulee tarjota laskuri, jonka avulla käyttäjä voi syöttää kenttään Celsius- ja Fahrenheit -asteet, ja muuntaa ne yhdestä muodosta toiseen. Apua celsius-asteista fahrenheitiksi ja fahrenheitista celsius-asteiksi.</p>
+            </article>
+
+            <article>
+             <p>
+                <input type="text" id="eka" value="0" />
+                <input type="button" value="+" onclick="plus();" />
+                <input type="button" value="-" onclick="miinus();" />
+                <input type="button" value="*" onclick="kerto();" />
+                <input type="button" value="/" onclick="jako();" />                   
+                <input type="text" id="toka" value="0" />
+                = <span id="tulos"></span>
+            </p>
+            </article>
+
+        </section>
+
+
+        <section>
+            <header>
+                <h1>Jalat metreiksi muunnin</h1>
+            </header>
+
+
+            <article>
+                <p>Jaloista metreiksi ja takaisin. Sivuston tulee tarjota myös laskuri, jonka avulla käyttäjä voi syöttää kenttään jalkojen lukumäärä (engl. feet) sekä metriluku, ja muuntaa ne yhdestä muodosta toiseen.</p>
+            </article>
+
+            <article>
+                <p>
+                <input type="text" id="eka" value="0" />
+                <input type="button" value="+" onclick="plus();" />
+                <input type="button" value="-" onclick="miinus();" />
+                <input type="button" value="*" onclick="kerto();" />
+                <input type="button" value="/" onclick="jako();" />                   
+                <input type="text" id="toka" value="0" />
+                = <span id="tulos"></span>
+            </p>
+            </article>
+
+        </section>
+
+
+        <section>
+            <header>
+                <h1>Julkaisulaskuri</h1>
+            </header>  
+
+            <article>
+                <p>Julkaisulaskuri. Yliopistojen rahoitukseen vaikuttaa 55 opintopistettä vuosittain saaneiden opiskelijoiden lisäksi muunmuassa tutkimuksesta raportoivien julkaisujen laatu ja määrä. Julkaisut voidaan jakaa neljään luokkaan: luokka 0, luokka 1, luokka 2, ja luokka 3. Tällä hetkellä luokan 0 julkaisujen painoarvo on 1, luokan 1 julkaisujen painoarvo on 1.5, luokan 2 julkaisujen painoarvo on 3, ja luokan 3 julkaisujen painoarvo on 3. Toteuta laskuri, johon tutkija voi kirjoittaa kuhunkin luokkaan kuuluvien julkaisujen määrän, ja joka laskee julkaisujen yhteispainomäärän. Esimerkiksi, jos Matti L. julkaisee vuonna 2015 yhden luokkaa 0 olevan artikkelin, kaksi luokkaa 1 olevaa artikkelia, ja yhden luokkaa 2 olevan artikkelin, on hänen julkaisujen yhteispainomäärä 7.</p>
+            </article>
+            
+            <article>
+                            <p>
+                <input type="text" id="eka" value="0" />
+                <input type="button" value="+" onclick="plus();" />
+                <input type="button" value="-" onclick="miinus();" />
+                <input type="button" value="*" onclick="kerto();" />
+                <input type="button" value="/" onclick="jako();" />                   
+                <input type="text" id="toka" value="0" />
+                = <span id="tulos"></span>
+            </p>
+            </article>
+        </section>
+
+            <article>
+                <p>Tykkää -laskuri</p>
+            </article>
+        
+        <script src="code.js"></script>        
+    </body>
+</html>

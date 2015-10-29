@@ -54,6 +54,10 @@ section.hidden {
     display: none;
 }
 
+.lohko {
+    display: block;
+}
+
 turha {
     color: rgb(233, 229, 217);
     color: rgb(73, 69, 69);

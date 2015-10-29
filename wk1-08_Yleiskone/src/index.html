@@ -14,9 +14,12 @@
 
             <nav>
                 <ul>
-                    <li><a href="#" onclick="displaySection(0);return false;">Celsius-Fahrenheit -muunnin</a></li>
-                    <li><a href="#" onclick="displaySection(1);return false;">Jalka-metri -muunnin</a></li>
-                    <li><a href="#" onclick="displaySection(2);return false;">Julkaisulaskuri</a></li>
+                    <li><a href="#" onclick="displaySection(0);
+                            return false;">Celsius-Fahrenheit -muunnin</a></li>
+                    <li><a href="#" onclick="displaySection(1);
+                            return false;">Jalka-metri -muunnin</a></li>
+                    <li><a href="#" onclick="displaySection(2);
+                            return false;">Julkaisulaskuri</a></li>
 
                 </ul>
             </nav>
@@ -32,15 +35,12 @@
             </article>
 
             <article>
-             <p>
-                <input type="text" id="eka" value="0" />
-                <input type="button" value="+" onclick="plus();" />
-                <input type="button" value="-" onclick="miinus();" />
-                <input type="button" value="*" onclick="kerto();" />
-                <input type="button" value="/" onclick="jako();" />                   
-                <input type="text" id="toka" value="0" />
-                = <span id="tulos"></span>
-            </p>
+                <p>
+                    <input type="text" id="celsius" value="0" />
+                    <input type="button" value="C=>F" onclick="celsiusFahrenheit();" />
+                    <input type="button" value="C<=F" onclick="fahrenheitCelsius();" />                
+                    <input type="text" id="fahrenheit" value="0" />
+                </p>
             </article>
 
         </section>
@@ -58,14 +58,11 @@
 
             <article>
                 <p>
-                <input type="text" id="eka" value="0" />
-                <input type="button" value="+" onclick="plus();" />
-                <input type="button" value="-" onclick="miinus();" />
-                <input type="button" value="*" onclick="kerto();" />
-                <input type="button" value="/" onclick="jako();" />                   
-                <input type="text" id="toka" value="0" />
-                = <span id="tulos"></span>
-            </p>
+                    <input type="text" id="jalka" value="0" />
+                    <input type="button" value="ft=>m" onclick="jalkaMetri();" />
+                    <input type="button" value="ft<=m" onclick="metriJalka();" />                   
+                    <input type="text" id="metri" value="0" />
+                </p>
             </article>
 
         </section>
@@ -79,24 +76,24 @@
             <article>
                 <p>Julkaisulaskuri. Yliopistojen rahoitukseen vaikuttaa 55 opintopistettä vuosittain saaneiden opiskelijoiden lisäksi muunmuassa tutkimuksesta raportoivien julkaisujen laatu ja määrä. Julkaisut voidaan jakaa neljään luokkaan: luokka 0, luokka 1, luokka 2, ja luokka 3. Tällä hetkellä luokan 0 julkaisujen painoarvo on 1, luokan 1 julkaisujen painoarvo on 1.5, luokan 2 julkaisujen painoarvo on 3, ja luokan 3 julkaisujen painoarvo on 3. Toteuta laskuri, johon tutkija voi kirjoittaa kuhunkin luokkaan kuuluvien julkaisujen määrän, ja joka laskee julkaisujen yhteispainomäärän. Esimerkiksi, jos Matti L. julkaisee vuonna 2015 yhden luokkaa 0 olevan artikkelin, kaksi luokkaa 1 olevaa artikkelia, ja yhden luokkaa 2 olevan artikkelin, on hänen julkaisujen yhteispainomäärä 7.</p>
             </article>
-            
+
             <article>
-                            <p>
-                <input type="text" id="eka" value="0" />
-                <input type="button" value="+" onclick="plus();" />
-                <input type="button" value="-" onclick="miinus();" />
-                <input type="button" value="*" onclick="kerto();" />
-                <input type="button" value="/" onclick="jako();" />                   
-                <input type="text" id="toka" value="0" />
-                = <span id="tulos"></span>
-            </p>
+                <p>
+                    Luokka 0: <input class="lohko" type="text" id="luokka0" value="0" />
+                    Luokka 1: <input class="lohko" type="text" id="luokka1" value="0" />
+                    Luokka 2: <input class="lohko" type="text" id="luokka2" value="0" />
+                    Luokka 3: <input class="lohko" type="text" id="luokka3" value="0" />                  
+                    <input class="lohko" type="button" value="Yhteensä" onclick="laske();" />                   
+                    <input class="lohko" type="text" id="yhteensa" value="0" />
+                    = <span id="tulos"></span>
+                </p>
             </article>
         </section>
 
-            <article>
-                <p>Tykkää -laskuri</p>
-            </article>
-        
+        <article>
+            <p>Tykkää -laskuri</p>
+        </article>
+
         <script src="code.js"></script>        
     </body>
 </html>

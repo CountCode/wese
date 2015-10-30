@@ -31,11 +31,12 @@
             </header>
 
             <article>
-                <p>Celsius-asteista Fahrenheitiksi ja takaisin. Sivuston tulee tarjota laskuri, jonka avulla käyttäjä voi syöttää kenttään Celsius- ja Fahrenheit -asteet, ja muuntaa ne yhdestä muodosta toiseen. Apua celsius-asteista fahrenheitiksi ja fahrenheitista celsius-asteiksi.</p>
+                <p>Muuttaa Celsius-asteista Fahrenheitiksi ja Fahrenheitit Celsius-asteiksi.</p>
             </article>
 
             <article>
                 <p>
+                    Anna Celsius-asteet tai Fahrenheitit:<br>
                     <input type="text" id="celsius" value="0" />
                     <input type="button" value="C=>F" onclick="celsiusFahrenheit();" />
                     <input type="button" value="C<=F" onclick="fahrenheitCelsius();" />                
@@ -53,11 +54,12 @@
 
 
             <article>
-                <p>Jaloista metreiksi ja takaisin. Sivuston tulee tarjota myös laskuri, jonka avulla käyttäjä voi syöttää kenttään jalkojen lukumäärä (engl. feet) sekä metriluku, ja muuntaa ne yhdestä muodosta toiseen.</p>
+                <p>Muuttaa jaloista metreiksi ja vastaavasti metrit jaloiksi.</p>
             </article>
 
             <article>
                 <p>
+                    Anna jalat tai metrit:<br>
                     <input type="text" id="jalka" value="0" />
                     <input type="button" value="ft=>m" onclick="jalkaMetri();" />
                     <input type="button" value="ft<=m" onclick="metriJalka();" />                   
@@ -74,24 +76,27 @@
             </header>  
 
             <article>
-                <p>Julkaisulaskuri. Yliopistojen rahoitukseen vaikuttaa 55 opintopistettä vuosittain saaneiden opiskelijoiden lisäksi muunmuassa tutkimuksesta raportoivien julkaisujen laatu ja määrä. Julkaisut voidaan jakaa neljään luokkaan: luokka 0, luokka 1, luokka 2, ja luokka 3. Tällä hetkellä luokan 0 julkaisujen painoarvo on 1, luokan 1 julkaisujen painoarvo on 1.5, luokan 2 julkaisujen painoarvo on 3, ja luokan 3 julkaisujen painoarvo on 3. Toteuta laskuri, johon tutkija voi kirjoittaa kuhunkin luokkaan kuuluvien julkaisujen määrän, ja joka laskee julkaisujen yhteispainomäärän. Esimerkiksi, jos Matti L. julkaisee vuonna 2015 yhden luokkaa 0 olevan artikkelin, kaksi luokkaa 1 olevaa artikkelia, ja yhden luokkaa 2 olevan artikkelin, on hänen julkaisujen yhteispainomäärä 7.</p>
+                <p>Julkaisut jaetaan neljään luokkaan: luokka 0, luokka 1, luokka 2, ja luokka 3. Tällä hetkellä luokan 0 julkaisujen painoarvo on 1, luokan 1 julkaisujen painoarvo on 1.5, luokan 2 julkaisujen painoarvo on 3, ja luokan 3 julkaisujen painoarvo on 3.</p>
             </article>
 
             <article>
-                <p>
-                    Luokka 0: <input class="lohko" type="text" id="luokka0" value="0" />
-                    Luokka 1: <input class="lohko" type="text" id="luokka1" value="0" />
-                    Luokka 2: <input class="lohko" type="text" id="luokka2" value="0" />
-                    Luokka 3: <input class="lohko" type="text" id="luokka3" value="0" />                  
-                    <input class="lohko" type="button" value="Yhteensä" onclick="laske();" />                   
-                    <input class="lohko" type="text" id="yhteensa" value="0" />
-                    = <span id="tulos"></span>
+                <p class="lohko">
+                    Syötä eri luokkiin kuuluvien julkaisujen määrät:<br>
+                    Luokka 0: <input type="text" id="luokka0" value="0" ><br>
+                    Luokka 1: <input type="text" id="luokka1" value="0" ><br>
+                    Luokka 2: <input type="text" id="luokka2" value="0" ><br>
+                    Luokka 3: <input type="text" id="luokka3" value="0" ><br>
+                    Julkaisujen painoarvo<br>
+                    <input type="button" value="Yhteensä" onclick="laske();" >                  
+                    <input type="text" id="yhteensa" value="0" ><br>
                 </p>
             </article>
         </section>
 
         <article>
-            <p>Tykkää -laskuri</p>
+            <br>
+            <button type="button" onClick="tykkaa()">Tykkää</button>
+            <p>Tykkäyksiä: <a id="likes">0</a></p>            
         </article>
 
         <script src="code.js"></script>        

@@ -77,8 +77,10 @@ muistutus.controller.LomakeKontrolli = function (model) {
     this.lisaaTapahtuma = function (eventInformation) {
         var data = haeData();
         
-        alert(nimiValidoija.validoi(data));
-        alert(aikaValidoija.validoi(data));
+        var tulos=nimiValidoija.validoi(data);
+        if (tulos==="") console.log("Nimi OK!");
+        tulos=aikaValidoija.validoi(data);
+        if (tulos==="") console.log("Aika OK!");
         
         model.lisaaTapahtuma(data);
         tyhjennaElementit();

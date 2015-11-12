@@ -1,3 +1,11 @@
+var myDate = /((19|20)[0-9]{2})-([0][1-9]|[1][0-2])-([0][1-9]|[1-2][0-9]|[3][0-1])$/;
+
+/* Date regular expression tester:
+ var date = "2099-12-31";
+ if (myDate.test(date)) console.log("OK!") ;
+ else console.log("ERROR!");
+ */
+
 var muistutus = {};
 muistutus.view = {};
 
@@ -65,7 +73,9 @@ muistutus.controller.LomakeKontrolli = function (model) {
         if (!data) {
             return "Aika ei saa olla tyhjä!";
         }
-        // if ()
+        if (!myDate.test(data)) {
+            return "Aika annettava muodossa: vvvv-kk-pp";
+        }
         return "";
     });
 
@@ -76,12 +86,22 @@ muistutus.controller.LomakeKontrolli = function (model) {
 
     this.lisaaTapahtuma = function (eventInformation) {
         var data = haeData();
-        
-        var tulos=nimiValidoija.validoi(data);
-        if (tulos==="") console.log("Nimi OK!");
-        tulos=aikaValidoija.validoi(data);
-        if (tulos==="") console.log("Aika OK!");
-        
+
+        var tulos = nimiValidoija.validoi(data);
+        if (tulos !== "") {
+            alert(tulos);
+            return;
+        } else {
+            console.log("Nimi OK!");
+        }
+        tulos = aikaValidoija.validoi(data);
+        if (tulos !== "") {
+            alert(tulos);
+            return;
+        } else {
+            console.log("Aika OK!");
+        }
+
         model.lisaaTapahtuma(data);
         tyhjennaElementit();
     }

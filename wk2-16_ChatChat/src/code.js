@@ -37,8 +37,9 @@ messages.gui = (function () {
     }
     
     function loginButtonPressed() {
-        console.log("login button pressed");
+        //console.log("login button pressed");
         var nick = document.getElementById("nickname").value;
+        document.getElementById("nickname").value="";
         var data = {
             nickname: nick
         }        
@@ -53,7 +54,7 @@ messages.gui = (function () {
     }    
     
     function refreshButtonPressed() {
-        console.log("refreshed");
+      //  console.log("refreshed");
         messages.io.getMessages();
     }
     
@@ -82,7 +83,7 @@ messages.io = (function(displayHook) {
 var messages = new Array();
 
     function send(info) {
-        console.log("send");
+    //    console.log("send");
         var url = "http://bad.herokuapp.com/app/auth";
         var data = JSON.stringify(info);        
         var req = new XMLHttpRequest();
@@ -101,7 +102,7 @@ var messages = new Array();
             }
 
             // näytetään vastaus
-            console.log(req.responseText);
+      //      console.log(req.responseText);
             var teksti = JSON.parse(req.responseText);
             user = teksti.nickname;
             //console.log(teksti);                
@@ -115,7 +116,7 @@ var messages = new Array();
     }    
 
     function postMessage(info) {
-        console.log("post message");
+    //    console.log("post message");
         var url = "http://bad.herokuapp.com/app/messages";
         var data = JSON.stringify(info);        
         var req = new XMLHttpRequest();
@@ -134,7 +135,7 @@ var messages = new Array();
             }
 
             // näytetään vastaus
-            console.log("STATUS "+req.status);
+       //     console.log("STATUS "+req.status);
          //   console.log(req.responseText);
          //   var teksti = JSON.parse(req.responseText);
             //console.log(teksti);                
@@ -148,7 +149,9 @@ var messages = new Array();
     }      
     
     function getMessages() {
-        console.log("get messages");
+ //       console.log("get messages");   
+        // empty messages array
+        messages = new Array();
         var url = "http://bad.herokuapp.com/app/messages";
       //  var data = JSON.stringify(info);        
         var req = new XMLHttpRequest();
@@ -167,14 +170,14 @@ var messages = new Array();
             }
 
             // näytetään vastaus
-            console.log(req.responseText);
+       //     console.log(req.responseText);
             var teksti = JSON.parse(req.responseText);
             var i = 0;            
-            console.log(teksti[i].id);
+    //        console.log(teksti[i].id);
             while (teksti[i]){
-                console.log(messages.length);
+    //            console.log(messages.length);
                 messages.push(teksti[i]);
-                console.log("While: "+teksti[i]);                
+    //            console.log("While: "+teksti[i]);                
                 i++;
             }                  
                 

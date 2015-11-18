@@ -21,29 +21,19 @@ var data1 = [];
         });
     });
 
-/*
-    $.getJSON('books.json',function(data){
-         var i=0;
-         for(i=0;i<data.length;i++){
-            data[i]=[data[i].id,String(data[i].username),String(data[i].haiku)];
-        }
-*/
-
-console.log(data1);
-
 function showdata() {
-    console.log("Showdata");
+  //  console.log("Showdata");
   var dataForTemplate = {
     list: data1
   };
 
   // filtteröinti
-  var mustContain = $("#searchbox").val();
-  console.log(mustContain);
+  var mustContain = $("#searchbox").val().toUpperCase();
+ // console.log(mustContain);
   dataForTemplate.list = $.grep(dataForTemplate.list, function(book, index) {
-    return book.title.indexOf(mustContain) != -1;
+    return book.title.toUpperCase().indexOf(mustContain) != -1;
   });
-  console.log(dataForTemplate.list);
+  // console.log(dataForTemplate.list);
 
   // renderöidään tulokset mustachen avulla
   var html = Mustache.render($("#searchresulttemplate").html(), dataForTemplate);

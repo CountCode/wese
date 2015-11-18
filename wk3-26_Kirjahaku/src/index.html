@@ -11,12 +11,13 @@
         </header>
 
         <section>
-            <input type="text" id="searchbox"/>
+            Give search term: <input type="text" id="searchbox"/>
         </section>
-
+        <br>
         <section id="resultview"></section>
 
         <script id="searchresulttemplate" type="text/html">
+            <h2>Matching title:</h2>
             {{#list}}
             <p>{{title}}</p>
             {{/list}}

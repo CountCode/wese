@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Muistilista</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/todo.css">
+    </head>
+    <body ng-app="TodoApp">
+        <div ng-controller="TodoController">
+            <h1>Muistilista</h1>
+            <div id="todo-container">
+                <div id="add-todo-container">
+                  <input ng-model="uusiTeht" type="text" placeholder="Uusi tehtävä" ng-init="uusiTeht=''">
+                  <button ng-click="uusiTehtava()" ng-disabled="uusiTeht===''" >Lisää tehtävä</button>
+                  <button ng-click="kaikkiTehty()" id="mark-todos-done">Merkkaa kaikki tehdyiksi</button>
+                  <button ng-click="poistaKaikki()" id="remove-todos">Poista kaikki</button>
+                </div>
+
+                <div class="todo" ng-repeat="tehtava in tehtavat">
+                    <p>{{tehtava.tehtavanNimi}}</p>
+                    <input type="text" value="0" class="todo-priority">
+                    <label>
+                        <input ng-model="tehty" type="checkbox" checked> <span class="todo-done">{{tehtava.tehtavanNimi}}</span>
+                    </label>
+                    <button class="remove-todo">Poista</button>              
+                </div>
+                
+                <div class="todo">
+                  <input type="text" value="1" class="todo-priority">
+                  <label>
+                    <input type="checkbox" checked> <span class="todo-done">Kirjoita Angular-materiaalia</span>
+                  </label>
+                  <button class="remove-todo">Poista</button>
+                </div>
+
+                <div class="todo">
+                  <input type="text" value="2" class="todo-priority">
+                  <label>
+                    <input type="checkbox"> <span>Ruoki koira</span>
+                  </label>
+                  <button class="remove-todo">Poista</button>
+                </div>
+
+                <div class="todo">
+                  <input type="text" value="3" class="todo-priority">
+                  <label>
+                    <input type="checkbox"> <span>Käy kaupassa</span>
+                  </label>
+                  <button class="remove-todo">Poista</button>
+                </div>
+
+                <div id="todo-footer">
+                  1 tehtävä tehty, 2 tehtävää jäljellä
+                </div>
+            </div>
+        </div>
+        
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="app/app.js"></script>
+     <!--   <script src="app/controllers/todo_controller.js"></script>       -->
+    </body>
+</html>

@@ -12,20 +12,19 @@
             <div id="todo-container">
                 <div id="add-todo-container">
                   <input ng-model="uusiTeht" type="text" placeholder="Uusi tehtävä" ng-init="uusiTeht=''">
-                  <button ng-click="uusiTehtava()" ng-disabled="uusiTeht===''" >Lisää tehtävä</button>
+                  <button ng-click="lisaa()" ng-disabled="uusiTeht===''" >Lisää tehtävä</button>
                   <button ng-click="kaikkiTehty()" id="mark-todos-done">Merkkaa kaikki tehdyiksi</button>
                   <button ng-click="poistaKaikki()" id="remove-todos">Poista kaikki</button>
                 </div>
 
                 <div class="todo" ng-repeat="tehtava in tehtavat">
-                    <p>{{tehtava.tehtavanNimi}}</p>
-                    <input type="text" value="0" class="todo-priority">
+                    <input type="text" value="0" ng-model="tehtava.prioriteetti" ng-blur="jarjesta()" class="todo-priority">
                     <label>
-                        <input ng-model="tehty" type="checkbox" checked> <span class="todo-done">{{tehtava.tehtavanNimi}}</span>
+                        <input type="checkbox" ng-model="tehtava.tehty"><span ng-class="{'todo-done': tehtava.tehty}">{{tehtava.tehtavanNimi}}</span>
                     </label>
-                    <button class="remove-todo">Poista</button>              
+                    <button ng-click="poista(tehtava)" class="remove-todo">Poista</button>              
                 </div>
-                
+ <!--               
                 <div class="todo">
                   <input type="text" value="1" class="todo-priority">
                   <label>
@@ -49,15 +48,25 @@
                   </label>
                   <button class="remove-todo">Poista</button>
                 </div>
-
+-->
                 <div id="todo-footer">
-                  1 tehtävä tehty, 2 tehtävää jäljellä
+                    <div ng-pluralize count="todosDone"
+                                  when="{'0': 'Ei tehtäviä tehty.',
+                                  'one': '1 tehtävä tehty.',
+                        'other': '{} tehtävää tehty.'}">
+                    </div>                         
+                    <div ng-pluralize count="todosRemain"
+                                  when="{'0': 'Ei tehtäviä jäljellä.',
+                                  'one': '1 tehtävä tekemättä.',
+                        'other': '{} tehtävää jäljellä.'}">
+                    </div>               
+      <!--            1 tehtävä tehty, 2 tehtävää jäljellä -->
                 </div>
             </div>
         </div>
         
         <script src="bower_components/angular/angular.min.js"></script>
         <script src="app/app.js"></script>
-     <!--   <script src="app/controllers/todo_controller.js"></script>       -->
+        <script src="app/controllers/todo_controller.js"></script>
     </body>
 </html>

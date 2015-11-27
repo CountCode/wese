@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Chat</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/chat.css">
+    </head>
+    <body ng-app="ChatApp">
+        <div ng-controller="ChatController">
+            <h1>Chat</h1>
+
+            <div id="username-container" ng-show="true">
+                <h2>Valitse itsellesi käyttäjätunnus</h2>
+                <input ng-model="newUser" type="text">
+                <button>Valitse</button>
+            </div>
+
+            <div id="chat-container" ng-show="true">
+                <div id="chat-messages-container">
+                    <ul>
+                        <li ng-repeat="message in messages">
+                            <strong>{{message.user}}:</strong> {{message.text}}
+                            <p>
+                                Lisätty: {{message.added}}
+                            </p>
+                        </li>                        
+                        <li>
+                            <strong>Henri:</strong> Angular on paras!
+                            <p>
+                                Lisätty: 01.01.2015 12:40
+                            </p>
+                        </li>
+                        <li>
+                            <strong>Kalle:</strong> What's up?
+                            <p>
+                               Lisätty: 04.01.2014 09:13
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div id="chat-users-container">
+                    <ul>
+                        <li ng-repeat="user in users">{{user}}</li>
+                        <li>Elina</li>
+                        <li>Kalle</li>
+                        <li>Henri</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="add-message-container">
+                <textarea ng-model="newText">
+                </textarea>
+                <button>Lähetä</button>
+            </div>
+        </div>
+
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/firebase/firebase.js"></script>
+        <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
+        <script src="app/app.js"></script>
+        <script src="app/services/firebase_service.js"></script>
+        <script src="app/controllers/chat_controller.js"></script>
+    </body>
+</html>

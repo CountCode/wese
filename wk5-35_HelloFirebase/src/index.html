@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Hello Firebase!</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body ng-app="HelloApp">
+        <div ng-controller="HelloController">
+            <h1>Firebase sanoo: {{data.message}}</h1>
+        </div>
+
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/firebase/firebase.js"></script>
+        <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
+        <script src="app/app.js"></script>
+        <script src="app/services/firebase_service.js"></script>
+        <script src="app/controllers/hello_controller.js"></script>
+    </body>
+</html>

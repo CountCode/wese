@@ -14,10 +14,10 @@
             <div id="username-container" ng-show="true">
                 <h2>Valitse itsellesi käyttäjätunnus</h2>
                 <input ng-model="newUser" type="text">
-                <button>Valitse</button>
+                <button ng-click="addUser()">Valitse</button>
             </div>
 
-            <div id="chat-container" ng-show="true">
+            <div id="chat-container" ng-show="activeUser.length>0">
                 <div id="chat-messages-container">
                     <ul>
                         <li ng-repeat="message in messages">
@@ -26,34 +26,19 @@
                                 Lisätty: {{message.added}}
                             </p>
                         </li>                        
-                        <li>
-                            <strong>Henri:</strong> Angular on paras!
-                            <p>
-                                Lisätty: 01.01.2015 12:40
-                            </p>
-                        </li>
-                        <li>
-                            <strong>Kalle:</strong> What's up?
-                            <p>
-                               Lisätty: 04.01.2014 09:13
-                            </p>
-                        </li>
                     </ul>
                 </div>
                 <div id="chat-users-container">
                     <ul>
-                        <li ng-repeat="user in users">{{user}}</li>
-                        <li>Elina</li>
-                        <li>Kalle</li>
-                        <li>Henri</li>
+                        <li ng-repeat="user in users">{{user.user}}</li>
                     </ul>
                 </div>
             </div>
             
-            <div id="add-message-container">
+            <div id="add-message-container" ng-show="activeUser.length>0">
                 <textarea ng-model="newText">
                 </textarea>
-                <button>Lähetä</button>
+                <button ng-click="addMessage()">Lähetä</button>
             </div>
         </div>
 

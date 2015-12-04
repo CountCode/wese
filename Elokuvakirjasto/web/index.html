@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Elokuvakirjasto</title>
+    </head>
+    <body ng-app="MyApp">
+        <div ng-controller="MovieController">
+            <h1>Elokuvat</h1>
+            <ul>
+                <li ng-repeat="movie in movies">
+                    <strong>{{movie.name}} ({{movie.release}})</strong>, director: {{movie.director}}, description: {{movie.description}}
+                </li>
+            </ul>
+            <h2>Lisää</h2>
+            <form name="movieForm">
+                <p>
+                    <label>Nimi</label>
+                    <input name="name" type="text" ng-model="name" required ng-minlegth="1">
+                <div ng-show="movieForm.name.$invalid">
+                    Movie name is not valid!
+                </div>
+                </p>
+                <p>
+                    <label>Julkaisuvuosi</label>
+                    <input name="release" type="text" ng-model="release" required ng-minlegth="1">
+                <div ng-show="movieForm.release.$invalid">
+                    Movie release year is not valid!
+                </div>                    
+                </p>
+                <p>
+                    <label>Ohjaaja</label>
+                    <input name="director" type="text" ng-model="director"  required ng-minlegth="1">
+                <div ng-show="movieForm.director.$invalid">
+                    Movie director name is not valid!
+                </div>                    
+                </p>
+                <p>
+                    <label>Kuvaus</label>
+                    <input name="description" type="text" ng-model="description"  required ng-minlegth="1">
+                <div ng-show="movieForm.description.$invalid">
+                    Movie description is not valid!
+                </div>                    
+                </p>
+                <p>
+                    <input ng-click="addMovie()" type="submit" value="Send" ng-disabled="movieForm.$invalid">
+                </p>                
+            </form>
+        </div>
+        <!-- Hyödyllisiä kirjastoja -->
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <script src="bower_components/firebase/firebase.js"></script>
+        <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
+
+        <!-- Linkitä omat tiedostosi tähän (huomaa, että polun juuri on web-kansio!) -->
+        <script src="app/app.js"></script>
+        <script src="app/controllers/movies-controller.js"></script>
+    </body>
+</html>    
